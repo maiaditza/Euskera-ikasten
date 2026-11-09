@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="eu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MaiAditza</title>
+<meta name="description" content="Euskal aditzak praktikatzeko: taulak bete edo esaldietan falta den aditza idatzi.">
+<meta name="theme-color" content="#eef1ec" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101612" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="MaiAditza">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap" lang="eu">
+  <header>
+    <h1>Mai<span>Aditza</span></h1>
+    <p>Euskal aditzak praktikatzeko: bete taulak, edo idatzi esaldi bakoitzean falta den aditza.</p>
+  </header>
+
+  <section class="controls" aria-label="Aukerak">
+    <div class="kinds" role="group" aria-label="Ariketa mota">
+      <button type="button" id="k-tables" aria-pressed="true">Taulak</button>
+      <button type="button" id="k-sent" aria-pressed="false">Esaldiak</button>
+    </div>
+    <div class="modes" role="group" aria-label="Modua" id="modes">
+      <button type="button" id="m-table" aria-pressed="true">Taula osoa</button>
+      <button type="button" id="m-flash" aria-pressed="false">Banan-banan</button>
+    </div>
+    <div class="filters">
+      <label>Taula
+        <select id="f-group"></select>
+      </label>
+      <label>Denbora
+        <select id="f-tense"></select>
+      </label>
+      <label id="nor-wrap">NOR
+        <select id="f-nor"></select>
+      </label>
+      <label id="pick-wrap">Ariketa
+        <select id="f-ex"></select>
+      </label>
+    </div>
+  </section>
+
+  <section class="card" aria-live="polite">
+    <div class="head">
+      <div>
+        <div class="chips"><span class="chip g" id="c-group"></span><span class="chip" id="c-tense"></span></div>
+        <h2 class="verb" id="verb"></h2>
+        <p class="ctx" id="ctx"></p>
+        <p class="ex" id="example"></p>
+      </div>
+      <div class="score" id="score"></div>
+    </div>
+
+    <form id="quiz" autocomplete="off">
+      <div class="rows" id="rows"></div>
+    </form>
+    <div id="summary" class="summary" hidden></div>
+    <div class="actions">
+      <button type="button" class="btn primary" id="check">Zuzendu</button>
+      <button type="button" class="btn" id="reveal">Erakutsi erantzuna</button>
+      <button type="button" class="btn" id="next">Hurrengoa</button>
+    </div>
+  </section>
+
+  <details>
+    <summary>Nola erabili</summary>
+    <ul>
+      <li><b>Taulak</b>: pertsona bakoitzaren forma idatzi. Forma bakarrik (<b>dut</b>) edo izenordainarekin (<b>nik dut</b>).</li>
+      <li><b>Esaldiak</b>: esaldian falta den aditz-forma idatzi. Aditz trinkoetan parentesi artean dago zein aditz den.</li>
+      <li><b>Enter</b> sakatuta hurrengo eremura pasatzen zara; azkenekoan zuzendu egiten du, eta berriro sakatuta hurrengo ariketara.</li>
+      <li>NOR-NORI, NOR-NORK eta NOR-NORI-NORK tauletan <b>NOR</b> aukeratu dezakezu (ni, zu, hura…). NOR-NORI-NORK taulan NOR beti hura (<i>dio</i>) edo haiek (<i>dizkio</i>) da.</li>
+      <li>Euskara batuko formak dira. Oraingoz ez dago hitanorik (hi, hik).</li>
+    </ul>
+  </details>
+  <footer>Formak Santurtziko EUSko <a href="https://ikasgela.santurtzieus.com/mod/book/view.php?id=20491&amp;chapterid=3270" target="_blank" rel="noopener">«Aditzak» liburuarekin</a> egiaztatuta (NOR, NOR-NORI, NOR-NORK eta NOR-NORI-NORK, orainaldia eta lehenaldia).</footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
