@@ -1,6 +1,6 @@
 // Network first for the app's own files (updates show up as soon as you're online),
 // with the cache as fallback so the app also works offline.
-const CACHE = "maiaditza-v1";
+const CACHE = "maiaditza-v2";
 const ASSETS = [
   "./",
   "index.html",
